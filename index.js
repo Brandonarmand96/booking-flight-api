@@ -129,6 +129,19 @@ app.delete('/api/flights/:id', async (req, res) => {
     })
   }
 })
+//get all flights
+app.get('/', async  (req, res) =>{
+  try{
+    res.status(200).json({
+      message:"Here are all the api call",
+      api: "/api/flights"
+    })
+  } catch(err) {
+    res.status(500).json({
+      message: err.message
+    })
+  }
+})
 
 const port = process.env.PORT || 3000;
 
